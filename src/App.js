@@ -29,7 +29,18 @@ class App extends Component {
     super();
 
     this.state = {
-      string: 'HUJJ HUJJ!'
+      string: 'HUJJ HUJJ',
+      monsters: [
+        {
+          name: 'Frankenstein',
+        },
+        {
+          name: 'Dracula',
+        },
+        {
+          name: 'Dick',
+        },
+      ],
     }
   }
 
@@ -37,8 +48,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          { this.state.monsters.map(mnstre => <h1>{mnstre.name} the MOFO</h1>) }
           <img src={logo} className="App-logo" alt="logo" />
-          <p>{this.state.string}</p>
+          <p>{'{' + this.state.string + '}'}</p>
           <button onClick={() => this.setState({ string: 'Jóska ' + (new Date()).getSeconds() })}>Klikk</button>
         </header>
       </div>
