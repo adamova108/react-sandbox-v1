@@ -30,21 +30,19 @@ class App extends Component {
 
     this.state = {
       string: 'HUJJ HUJJ',
-      monsters: [
-        {
-          id : 'm-1',
-          name: 'Frankenstein',
-        },
-        {
-          id : 'm-2',
-          name: 'Dracula',
-        },
-        {
-          id : 'm-3',
-          name: 'Dick',
-        },
-      ],
+      monsters: [{id: 'njmn', name: 'uff'}]
     }
+    
+  }
+  
+  componentDidMount() {
+    setTimeout(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(mnstrs => {
+      this.setState({monsters: mnstrs})
+    });}, 1000);
+    
   }
 
   render() {
@@ -53,7 +51,7 @@ class App extends Component {
         <header className="App-header">
           { 
             this.state.monsters.map(
-              mnstre => <h3 key={mnstre.id}>{mnstre.name} the MOFO.</h3>
+              (mnstre, i) => <h3 key={mnstre.id} id={"mnstre_" + i}>{mnstre.name} the MOFO. {i}</h3>
             ) 
           }
           <img src={logo} className="App-logo" alt="logo" />
