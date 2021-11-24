@@ -32,12 +32,15 @@ class App extends Component {
       string: 'HUJJ HUJJ',
       monsters: [
         {
+          id : 'm-1',
           name: 'Frankenstein',
         },
         {
+          id : 'm-2',
           name: 'Dracula',
         },
         {
+          id : 'm-3',
           name: 'Dick',
         },
       ],
@@ -48,10 +51,17 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          { this.state.monsters.map(mnstre => <h1>{mnstre.name} the MOFO</h1>) }
+          { 
+            this.state.monsters.map(
+              mnstre => <h3 key={mnstre.id}>{mnstre.name} the MOFO.</h3>
+            ) 
+          }
           <img src={logo} className="App-logo" alt="logo" />
           <p>{'{' + this.state.string + '}'}</p>
           <button onClick={() => this.setState({ string: 'Jóska ' + (new Date()).getSeconds() })}>Klikk</button>
+          <br/>
+          <br/>
+          <br/>
         </header>
       </div>
     );
