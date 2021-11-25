@@ -36,20 +36,37 @@ class App extends Component {
   }
   
   componentDidMount() {
+
     setTimeout(() => {
-      fetch('https://jsonplaceholder.typicode.com/usersasd')
+      fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
       .then(mnstrs => {
         if (mnstrs.length) 
           this.setState({monsters: mnstrs})
         else 
-        this.setState({monsters: [{id: 'errorka', name: 'ErrorkA'}]})
+          this.setState({monsters: [{id: 'errorka', name: 'ErrorkA'}]})
       })
       .catch((error) => {
         console.log('Error:', error);
       });
+
+      /* fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => { 
+
+        // This deosn't work - WHY?
+
+        var mnstrs = response.json();
+
+        if (mnstrs.length) 
+          this.setState({monsters: mnstrs})
+        else 
+          this.setState({monsters: [{id: 'errorka', name: 'ErrorkA'}]})
+      })
+      .catch((error) => {
+        console.log('Error:', error);
+      }); */
+
     }, 1000);
-    
     
   }
 
