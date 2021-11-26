@@ -33,9 +33,23 @@ class App extends Component {
       monsters: [{id: 'njmn', name: 'uff'}]
     }
     
+    this.akarmi = new Promise(function(resolve, reject) {
+      setTimeout(() => {
+         resolve('{"data": 123}');
+      }, 1000);
+    });
+
   }
   
   componentDidMount() {
+
+    this.akarmi.then(val => JSON.parse(val)).then(arr => console.log(arr));
+
+    this.akarmi.then(val => {
+      let arr = JSON.parse(val);
+      console.log(arr);
+    });
+
 
     setTimeout(() => {
       fetch('https://jsonplaceholder.typicode.com/users')
@@ -74,6 +88,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          <Uff />
+          <Fica />
+          <Heye />
           { 
             this.state.monsters.map(
               (mnstre, i) => <h3 key={mnstre.id} id={"mnstre_" + i}>{mnstre.name} the MOFO. {i}</h3>
@@ -89,6 +106,32 @@ class App extends Component {
       </div>
     );
   }
+}
+
+class Uff extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      title: 'TÁJTÜL'
+    }
+  }
+
+  render() {
+    return (<p>{this.state.title}</p>);
+  }
+
+}
+
+export const Fica = props => (
+  <h3>Itten</h3>
+);
+
+function Heye() {
+  return (
+    <h5>Ottan</h5>
+  );
 }
 
 export default App;
