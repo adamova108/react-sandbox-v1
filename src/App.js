@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+
+import { CardList } from './components/card-list/card-list.component';
+
+import './components/card-list/card-list.styles.css';
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -91,6 +96,9 @@ class App extends Component {
           <Uff />
           <Fica />
           <Heye />
+          <CardList name="HUHH" klukka='{"klikka":"mukka"}'>
+            <i>Uffica</i>
+          </CardList>
           { 
             this.state.monsters.map(
               (mnstre, i) => <h3 key={mnstre.id} id={"mnstre_" + i}>{mnstre.name} the MOFO. {i}</h3>
@@ -108,6 +116,8 @@ class App extends Component {
   }
 }
 
+// Class declaration
+
 class Uff extends Component {
 
   constructor() {
@@ -124,9 +134,13 @@ class Uff extends Component {
 
 }
 
+// Function ver 2
+
 export const Fica = props => (
   <h3>Itten</h3>
 );
+
+// Function ver 1
 
 function Heye() {
   return (
