@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { CardList } from './components/card-list/card-list.component';
 
-import './components/card-list/card-list.styles.css';
+//import './components/card-list/card-list.styles.css';
 
 import logo from './logo.svg';
 import './App.css';
@@ -97,13 +97,12 @@ class App extends Component {
           <Fica />
           <Heye />
           <CardList name="HUHH" klukka='{"klikka":"mukka"}'>
-            <i>Uffica</i>
-          </CardList>
           { 
             this.state.monsters.map(
               (mnstre, i) => <h3 key={mnstre.id} id={"mnstre_" + i}>{mnstre.name} the MOFO. {i}</h3>
             ) 
           }
+          </CardList>
           <img src={logo} className="App-logo" alt="logo" />
           <p>{'{' + this.state.string + '}'}</p>
           <button onClick={() => this.setState({ string: 'Jóska ' + (new Date()).getSeconds() })}>Klikk</button>
