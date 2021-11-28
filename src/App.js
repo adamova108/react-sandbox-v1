@@ -36,8 +36,9 @@ class App extends Component {
 
     this.state = {
       string: 'HUJJ HUJJ',
+      clicked: false,
       monsters: [{id: 'njmn', name: 'uff'}],
-      clicked: false
+      searchField: ''
     }
     
     this.akarmi = new Promise(function(resolve, reject) {
@@ -96,7 +97,13 @@ class App extends Component {
   }
 
   render() {
+
+    const { monsters, searchField } = this.state;
+
+    const filteredMonsters = monsters.filter(moni => moni.name.toLowerCase().includes(searchField.toLowerCase()));
+
     return (
+
       <div className="App">
         <header className="App-header">
           <Uff />
@@ -105,7 +112,14 @@ class App extends Component {
           { 
             //<CardList name="HUHH" klukka='{"klikka":"mukka"}'></CardList>
           }
-          <CardList monsters={this.state.monsters} />
+          <input 
+            type='search' 
+            placeholder='search monsters' 
+            onChange={e => {
+              this.setState({ searchField: e.target.value }, () => { console.log('Immediate results'); });
+            }} 
+          />
+          <CardList monsters={filteredMonsters} />
           { 
             /* this.state.monsters.map(
               (mnstre, i) => <h3 key={mnstre.id} id={"mnstre_" + i}>{mnstre.name} the MOFO. {i}</h3>
