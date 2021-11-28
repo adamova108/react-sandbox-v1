@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-sandbox-v1/build/static/css/main.22b6ec03.chunk.css",
+    "main.js": "/react-sandbox-v1/build/static/js/main.43791f4b.chunk.js",
+    "main.js.map": "/react-sandbox-v1/build/static/js/main.43791f4b.chunk.js.map",
+    "runtime-main.js": "/react-sandbox-v1/build/static/js/runtime-main.58c4eefc.js",
+    "runtime-main.js.map": "/react-sandbox-v1/build/static/js/runtime-main.58c4eefc.js.map",
+    "static/js/2.493596af.chunk.js": "/react-sandbox-v1/build/static/js/2.493596af.chunk.js",
+    "static/js/2.493596af.chunk.js.map": "/react-sandbox-v1/build/static/js/2.493596af.chunk.js.map",
+    "static/js/3.3356caf3.chunk.js": "/react-sandbox-v1/build/static/js/3.3356caf3.chunk.js",
+    "static/js/3.3356caf3.chunk.js.map": "/react-sandbox-v1/build/static/js/3.3356caf3.chunk.js.map",
+    "index.html": "/react-sandbox-v1/build/index.html",
+    "static/css/main.22b6ec03.chunk.css.map": "/react-sandbox-v1/build/static/css/main.22b6ec03.chunk.css.map",
+    "static/js/2.493596af.chunk.js.LICENSE.txt": "/react-sandbox-v1/build/static/js/2.493596af.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/react-sandbox-v1/build/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.58c4eefc.js",
+    "static/js/2.493596af.chunk.js",
+    "static/css/main.22b6ec03.chunk.css",
+    "static/js/main.43791f4b.chunk.js"
+  ]
+}
