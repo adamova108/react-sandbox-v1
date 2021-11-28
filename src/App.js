@@ -151,7 +151,7 @@ class App extends Component {
             )  */
           }
           
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={logo} className="App-logo" alt="logo" width="100"/>
           <p>{'{' + this.state.string + '}'}</p>
           <button onClick={() => this.setState({ string: 'Jóska ' + (new Date()).getSeconds() })}>Klikk</button>
           <br/>
@@ -171,27 +171,27 @@ class Uff extends Component {
     super();
 
     this.state = {
-      title: 'TÁJTÜL'
+      title: 'Monsters Rolodex'
     }
   }
 
   render() {
-    return (<p>{this.state.title}</p>);
+    return (<h1>{this.state.title}</h1>);
   }
 
 }
 
-// Function ver 2
+// Functional component using export
 
 export const Fica = props => (
-  <h3>Itten</h3>
+  <h2>Itten</h2>
 );
 
-// Function ver 1
+// Functional component (direct)
 
 function Heye() {
   return (
-    <h5>Ottan</h5>
+    <h3>Ottan</h3>
   );
 }
 
