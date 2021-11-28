@@ -7,6 +7,7 @@ import { CardList } from './components/card-list/card-list.component';
 
 import logo from './logo.svg';
 import './App.css';
+import { SearchBox as SearchBuxa } from './components/search-box/search-box.component';
 
 /* function App() {
   return (
@@ -112,13 +113,22 @@ class App extends Component {
           { 
             //<CardList name="HUHH" klukka='{"klikka":"mukka"}'></CardList>
           }
-          <input 
+          {
+            /*<input 
             type='search' 
             placeholder='search monsters' 
             onChange={e => {
               this.setState({ searchField: e.target.value }, () => { console.log('Immediate results'); });
             }} 
+            />*/
+          }
+          <SearchBuxa 
+            placeholder='search monsters' 
+            handleChange={e => {
+              this.setState({ searchField: e.target.value }, () => { console.log('Immediate results'); });
+            }}
           />
+          
           <CardList monsters={filteredMonsters} />
           { 
             /* this.state.monsters.map(

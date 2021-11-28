@@ -10,8 +10,8 @@ export const Card = (props) => {
                 //<img alt={'m-' + props.monster.id} src={'https://robohash.org/' + props.monster.id + '?set=set2'} />
             }
             <img alt={'m-' + props.monster.id} src={`https://robohash.org/${props.monster.id}?set=set2&size=200x200`} />
-            <h2>{props.monster.name}</h2>
-            <p>{props.monster.email}</p>
+            <h4 style={{wordBreak: 'break-word'}}>{props.monster.name}</h4>
+            <p style={{wordBreak: 'break-all'}}>{props.monster.email}</p>
         </div>
     );
 }
