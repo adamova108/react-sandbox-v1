@@ -37,7 +37,7 @@ class App extends Component {
 
     this.state = {
       string: 'HUJJ HUJJ',
-      clicked: false,
+      josika: 'pistika',
       monsters: [{id: 'njmn', name: 'uff'}],
       searchField: ''
     }
@@ -48,7 +48,10 @@ class App extends Component {
       }, 1000);
     });
 
-    
+    this.joska = 'pista';
+
+    //this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
 
   }
 
@@ -97,6 +100,19 @@ class App extends Component {
     
   }
 
+  /* handleChange(e) {
+    this.setState({ searchField: e.target.value }, () => { console.log('Immediate results'); });
+  } */
+
+  handleChange = e => {
+    this.setState({ searchField: e.target.value }, () => { console.log('Immediate results'); });
+  }
+
+  handleClick(e) {
+    this.setState({josika: 'target: ' + e.target.tagName});
+  }
+
+
   render() {
 
     const { monsters, searchField } = this.state;
@@ -123,13 +139,12 @@ class App extends Component {
             />*/
           }
           <SearchBuxa 
-            placeholder='search monsters' 
-            handleChange={e => {
-              this.setState({ searchField: e.target.value }, () => { console.log('Immediate results'); });
-            }}
+            placeholder='search monsters'
+            handleChange={this.handleChange}
+            joska={this.state.josika}
           />
           
-          <CardList monsters={filteredMonsters} />
+          <CardList monsters={filteredMonsters} handleClick={this.handleClick} />
           { 
             /* this.state.monsters.map(
               (mnstre, i) => <h3 key={mnstre.id} id={"mnstre_" + i}>{mnstre.name} the MOFO. {i}</h3>

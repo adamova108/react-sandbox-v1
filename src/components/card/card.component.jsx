@@ -4,7 +4,7 @@ import './card.styles.css';
 
 export const Card = (props) => {
     return (
-        <div className="card-container">
+        <div className="card-container" onClick={props.handleClick}>
             { 
                 // This works as well
                 //<img alt={'m-' + props.monster.id} src={'https://robohash.org/' + props.monster.id + '?set=set2'} />
