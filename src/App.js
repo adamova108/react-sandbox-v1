@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
 import { CardList } from './components/card-list/card-list.component';
-
 //import './components/card-list/card-list.styles.css';
+
+
 
 import logo from './logo.svg';
 import './App.css';
@@ -35,7 +36,8 @@ class App extends Component {
 
     this.state = {
       string: 'HUJJ HUJJ',
-      monsters: [{id: 'njmn', name: 'uff'}]
+      monsters: [{id: 'njmn', name: 'uff'}],
+      clicked: false
     }
     
     this.akarmi = new Promise(function(resolve, reject) {
@@ -44,16 +46,20 @@ class App extends Component {
       }, 1000);
     });
 
+    
+
   }
-  
+
   componentDidMount() {
 
-    this.akarmi.then(val => JSON.parse(val)).then(arr => console.log(arr));
+    // Same result --- Why does 'fetch()' works only with .then().then() ?
+
+    /* this.akarmi.then(val => JSON.parse(val)).then(arr => console.log(arr));
 
     this.akarmi.then(val => {
       let arr = JSON.parse(val);
       console.log(arr);
-    });
+    }); */
 
 
     setTimeout(() => {
@@ -96,13 +102,16 @@ class App extends Component {
           <Uff />
           <Fica />
           <Heye />
-          <CardList name="HUHH" klukka='{"klikka":"mukka"}'>
           { 
-            this.state.monsters.map(
-              (mnstre, i) => <h3 key={mnstre.id} id={"mnstre_" + i}>{mnstre.name} the MOFO. {i}</h3>
-            ) 
+            //<CardList name="HUHH" klukka='{"klikka":"mukka"}'></CardList>
           }
-          </CardList>
+          <CardList monsters={this.state.monsters} />
+          { 
+            /* this.state.monsters.map(
+              (mnstre, i) => <h3 key={mnstre.id} id={"mnstre_" + i}>{mnstre.name} the MOFO. {i}</h3>
+            )  */
+          }
+          
           <img src={logo} className="App-logo" alt="logo" />
           <p>{'{' + this.state.string + '}'}</p>
           <button onClick={() => this.setState({ string: 'Jóska ' + (new Date()).getSeconds() })}>Klikk</button>
