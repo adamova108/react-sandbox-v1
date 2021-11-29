@@ -12,6 +12,6 @@ export const SearchBox = ({placeholder, handleChange, joska}) => {
                 onChange={handleChange} 
             />
             <em>{joska}</em>
-          </div>
+        </div>
     )
 }
