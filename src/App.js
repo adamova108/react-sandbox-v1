@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import { CardList } from './components/card-list/card-list.component';
 //import './components/card-list/card-list.styles.css';
 
-
-
 import logo from './logo.svg';
 import './App.css';
 import { SearchBox as SearchBuxa } from './components/search-box/search-box.component';
@@ -44,7 +42,7 @@ class App extends Component {
     
     this.akarmi = new Promise(function(resolve, reject) {
       setTimeout(() => {
-         resolve('{"data": 123}');
+        resolve('{"data": 123}');
       }, 1000);
     });
 
