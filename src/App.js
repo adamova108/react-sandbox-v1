@@ -40,7 +40,7 @@ class App extends Component {
       searchField: '',
       test2: true,
       test3: false,
-      test4: this.props.nevem + 'ujj'
+      test4: this.props.nevem + '+ujj'
     }
     
     this.akarmi = new Promise(function(resolve, reject) {
