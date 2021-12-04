@@ -127,6 +127,7 @@ class App extends Component {
           <Uff />
           <Fica />
           <Heye mada="Ficka" pipi="pupu" />
+          <Haya mada="Ficka" pipi="pupu" />
           { 
             //<CardList name="HUHH" klukka='{"klikka":"mukka"}'></CardList>
           }
@@ -206,6 +207,24 @@ function Heye(props) {
     </div>
   );
 }
+
+
+function Haya({mada, pipi}) {
+
+  return (
+    <div>
+      <h3>{mada}</h3>
+      <CompPipi pipi={pipi} />
+    </div>
+  );
+}
+
+function CompPipi({pipi}) {
+  return <div><h4>{pipi}</h4></div>;
+  //return (<div><h4>{pipi}</h4></div>);
+}
+
+
 
 export default App;
 
