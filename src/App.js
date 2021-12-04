@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 
 import { CardList } from './components/card-list/card-list.component';
 //import './components/card-list/card-list.styles.css';
@@ -126,7 +126,7 @@ class App extends Component {
         <header className="App-header">
           <Uff />
           <Fica />
-          <Heye />
+          <Heye mada="Ficka" pipi="pupu" />
           { 
             //<CardList name="HUHH" klukka='{"klikka":"mukka"}'></CardList>
           }
@@ -193,11 +193,17 @@ export const Fica = props => (
   <h2>Itten</h2>
 );
 
-// Functional component (direct)
+// Functional component 
 
-function Heye() {
+function Heye(props) {
+
+  const [mada, setMada] = useState("Fukkka");
+
   return (
-    <h3>Ottan</h3>
+    <div>
+      <h3>{mada}</h3>
+      <button onClick={() => setMada("KIKIRIKKI")}>KIKIRIKKI</button>
+    </div>
   );
 }
 
