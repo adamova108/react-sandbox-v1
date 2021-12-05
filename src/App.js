@@ -214,13 +214,13 @@ function Haya({mada, pipi}) {
   return (
     <div>
       <h3>{mada}</h3>
-      <CompPipi pipi={pipi} />
+      <CompPipi papa={pipi} />
     </div>
   );
 }
 
-function CompPipi({pipi}) {
-  return <div><h4>{pipi}</h4></div>;
+function CompPipi({papa}) {
+  return <div><h4>{papa}</h4></div>;
   //return (<div><h4>{pipi}</h4></div>);
 }
 
