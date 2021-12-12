@@ -210,7 +210,6 @@ function Heye(props) {
 
 
 function Haya({mada, pipi}) {
-
   return (
     <div>
       <h3>{mada}</h3>
