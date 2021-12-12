@@ -220,7 +220,7 @@ function Haya({mada, pipi}) {
 
 function CompPipi({papa}) {
   return <div><h4>{papa}</h4></div>;
-  //return (<div><h4>{pipi}</h4></div>);
+  //return (<div><h4>{papa}</h4></div>);
 }
 
 
